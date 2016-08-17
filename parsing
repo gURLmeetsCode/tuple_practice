@@ -1,0 +1,33 @@
+my_name = "Alice"
+
+print list(my_name)
+
+int_split = "1,2,3,4,5".split (",")
+print int_split
+
+fish_split = "one fish two fish red fish blue fish".split("fish")
+print fish_split
+
+grocery_str = "item:apples,quantity:4,price:1.50\n"
+grocery_str2 = "item:pears,quantity:400,price:11.50\n"
+
+def grocery(grocery_str):
+	split_quantity = grocery_str.split(",")
+
+	quantity_list=split_quantity[1].split(":")
+	quant_num = int(quantity_list[1])
+
+	quantity_list_2=split_quantity[2].split(":")
+	quant_price = float(quantity_list_2[1])
+
+	bill_total = quant_num * quant_price
+	return bill_total
+
+def main ():
+	items = ['item:apples,quantity:4,price:1.50\n', 'item:pears,quantity:5,price:2.00\n', 'item:cereal,quantity:1,price:4.49\n']
+
+	for string in items:
+		print grocery (string)
+
+if __name__ == '__main__':
+	main()
